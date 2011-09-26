@@ -15,6 +15,7 @@ class WizardlyScaffoldGenerator < Rails::Generators::Base
     # views
     underscore = options[:underscore] ? '_' : ''
     pages.each do |id, page|
+      @page = page 
       target = File.join('app', 'views', controller_class_path, controller_name, "#{underscore}#{id}.#{view_file_ext.last}")
       template "form.#{view_file_ext.first}", target
     end
