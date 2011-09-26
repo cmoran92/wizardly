@@ -16,6 +16,14 @@ class WizardlyControllerGenerator < Rails::Generators::Base
     template "helper.rb.erb", "app/helpers/#{controller_name}_helper.rb"
   end
   
+  def completed_redirect
+    options[:completed_redirect]
+  end
+  
+  def canceled_redirect
+    options[:canceled_redirect]
+  end
+  
   private
   
     def wizard_config
