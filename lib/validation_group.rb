@@ -13,7 +13,7 @@ module ValidationGroup
         return unless attributes
 
         attributes = [attributes] unless attributes.is_a?(Array)
-        self.reject!{|k,v| !attributes.include?(k.to_sym)}
+        messages.reject!{|k,v| !attributes.include?(k.to_sym)}
       end
 
       def self.included(base) #:nodoc:
