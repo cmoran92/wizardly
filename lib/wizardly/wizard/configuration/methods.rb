@@ -94,7 +94,7 @@ EVENTS
       @title = '#{page.title}'
       @description = '#{page.description}'
       _build_wizard_model
-      if request.post? && callback_performs_action?(:_on_post_#{id}_form)
+      if (request.post? || request.put?) && callback_performs_action?(:_on_post_#{id}_form)
         raise CallbackError, "render or redirect not allowed in :on_post(:#{id}) callback", caller
       end
       button_id = check_action_for_button
