@@ -64,7 +64,7 @@ EVENTS
         end
         mb << <<-INDEX
   def index
-    redirect_to :action=>:#{self.page_order.first}
+    real_redirect_to :action=>:#{self.page_order.first}
   end
 
         INDEX
